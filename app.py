@@ -23,7 +23,7 @@ GPIO.setup(relay_4_pin, GPIO.OUT)
 
 GPIO.output(relay_1_pin, GPIO.HIGH)
 GPIO.output(relay_2_pin, GPIO.HIGH)
-GPIO.output(relay_3_pin, GPIO.HIGH)
+GPIO.output(relay_3_pin, GPIO.HIGH	)
 GPIO.output(relay_4_pin, GPIO.HIGH)
 
 
@@ -113,7 +113,6 @@ def handle_data(): #get the data
    relay3 = request.values.getlist('relay3')
    relay4 = request.values.getlist('relay4')
 
-   print str(relay1) + " " + str(relay2) + " " + str(relay3) + " " + str(relay4)
 
    GPIO.output(relay_1_pin, not relay1)
    GPIO.output(relay_2_pin, not relay2)
@@ -136,6 +135,6 @@ def logout():
 if __name__ == "__main__":
     atexit.register(cleanup)
     app.secret_key = os.urandom(12)
-    app.run(debug=True,host='0.0.0.0', port=4000, ssl_context=ctx)
+    app.run(debug=True,host='0.0.0.0', port=443, ssl_context=ctx)
 
 
