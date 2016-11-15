@@ -1,0 +1,41 @@
+<link rel="stylesheet" href="/static/style.css" type="text/css">
+<html>
+
+	<form action="/submit" id="checkboxes" method="POST">
+		<div class="relay">
+			<div class="relay-screen">
+				<div class="app-title">
+					<h1>Relay Controls</h1>
+				</div>
+	 			<h3>
+				<div class="login-form">
+					<!-- Rectangular switch -->
+					<label class="switch">
+					  <input type="checkbox" name="relay1" onclick='handleClick(this);' {{ checked[0] }}>
+					  <div class="slider"></div>
+					</label>Relay 1<br>
+					<label class="switch">
+					  <input type="checkbox" name="relay2" onclick='handleClick(this);' {{ checked[1] }}>
+					  <div class="slider"></div>
+					</label>Relay 2<br>
+					<label class="switch">
+					  <input type="checkbox" name="relay3" onclick='handleClick(this);' {{ checked[2] }}>
+					  <div class="slider"></div>
+					</label>Relay 3<br>
+					<label class="switch">
+					  <input type="checkbox" name="relay4" onclick='handleClick(this);' {{ checked[3] }}>
+					  <div class="slider"></div>
+					</label>Relay 4<br>
+				</div>
+				</h3>
+			</div>
+		</div>
+	</form>
+ </body>
+</html>
+<script>
+function handleClick(cb) {
+	var form = document.getElementById("checkboxes");
+	form.submit();
+}
+</script>
